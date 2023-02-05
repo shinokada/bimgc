@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.6](https://github.com/shinokada/bimgc/compare/v0.1.5...v0.1.6) (2023-02-05)
+
+
+### Bug Fixes
+
+* add CNAME ([6b88ade](https://github.com/shinokada/bimgc/commit/6b88ade478949ecf6217f3e7712f0ac9c18abea8))
+
 ### [0.1.5](https://github.com/shinokada/bimgc/compare/v0.1.3...v0.1.5) (2023-02-05)
 
 
