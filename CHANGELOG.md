@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.3](https://github.com/shinokada/bimgc/compare/v0.1.2...v0.1.3) (2023-02-05)
+
+
+### Bug Fixes
+
+* static to public index.html ([010fb5d](https://github.com/shinokada/bimgc/commit/010fb5dec6819d29f8b62e7c9e0b716dd947a0e8))
+
 ### [0.1.2](https://github.com/shinokada/bimgc/compare/v0.1.1...v0.1.2) (2023-02-05)
 
 
