@@ -8,17 +8,19 @@ const {version} = require('../package.json');
 
 const args = yargs
   .options({
-    size: {
+    sizes: {
       type: 'array',
       demandOption: false,
       default: [100, 200, 400, 800],
       description: 'Array of sizes to generate',
+      alias: 's',
     },
     format: {
       type: 'array',
       demandOption: false,
       default: ['avif', 'webp'],
       description: 'Formats to generate',
+      alias: 'f',
     },
     outputdir: {
       type: 'string',
@@ -40,7 +42,7 @@ const args = yargs
 
 const inputFile = args._[0];
 const inputFileBase = path.basename(inputFile);
-const sizes = args.size;
+const sizes = args.sizes;
 const formats = args.format;
 const help = args.help;
 const outputDir = args.outputdir || '.';
@@ -107,7 +109,7 @@ console.log(`Converting ${inputFile} to ${formats.join(', ')} at sizes ${sizes.j
 
     console.log('🚀🚀🔥🔥 Done!');
   } catch (error) {
-    console.error(`🚫 error`);
+    console.error(`🚫 Error:`, error);
     process.exit(1);
   }
 })();
