@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.7](https://github.com/shinokada/bimgc/compare/v0.1.6...v0.1.7) (2023-02-05)
+
+
+### Bug Fixes
+
+* add shebang ([c04b586](https://github.com/shinokada/bimgc/commit/c04b5860e80c36ce7e42033a0cd17eb0b3814b1a))
+
 ### [0.1.6](https://github.com/shinokada/bimgc/compare/v0.1.5...v0.1.6) (2023-02-05)
 
 
