@@ -1,0 +1,19 @@
+{
+  "name": "batch-img-con",
+  "version": "0.1.0",
+  "description": "",
+  "main": "bin/index.js",
+  "bin": {
+    "imgtaggen": "bin/index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "sharp": "^0.31.3",
+    "yargs": "^17.6.2"
+  }
+}
