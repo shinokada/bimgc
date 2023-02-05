@@ -44,12 +44,12 @@ const help = args.help;
 const outputDir = args.outputdir || '.';
 
 if (!inputFile) {
-  console.error('Please provide an input file');
+  console.error('🚫 Please provide an input file');
   process.exit(1);
 }
 
 if (!fs.existsSync(inputFile)) {
-  console.error(`File not found: ${inputFile}`);
+  console.error(`🚫 File not found: ${inputFile}`);
   process.exit(1);
 }
 
@@ -62,7 +62,7 @@ const supportedFormats = ['webp', 'avif'];
 
 for (const format of formats) {
   if (!supportedFormats.includes(format)) {
-    console.error(`Unsupported format: ${format}. Supported formats are: ${supportedFormats.join(', ')}`);
+    console.error(`🚫 Unsupported format: ${format}. Supported formats are: ${supportedFormats.join(', ')}`);
     process.exit(1);
   }
 }
@@ -103,9 +103,9 @@ console.log(`Converting ${inputFile} to ${formats.join(', ')} at sizes ${sizes.j
       }
     }
 
-    console.log('Done!');
+    console.log('🚀🚀🔥🔥 Done!');
   } catch (error) {
-    console.error(error);
+    console.error(`🚫 error`);
     process.exit(1);
   }
 })();
