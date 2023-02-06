@@ -27,9 +27,10 @@
     style="width: 100%; aspect-ratio: 1.619047619047619"
     loading="lazy"
     decoding="async"
-    alt="My awesome image"
+    alt="bimgc main image"
   />
 </picture>
+
 
 
 
