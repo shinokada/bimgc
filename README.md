@@ -1,4 +1,37 @@
-# bimgc - Batch Image Converter
+<h1 align="center">BIMGC</h1>
+
+<p align="center">
+<a href="https://bimgc.codewithshin.com/" rel="nofollow">Batch Image Converter</a>
+</p>
+
+<p align="center">
+<a href="https://github.com/sponsors/shinokada" target="_blank"><img src="https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=GitHub&color=%23fe8e86" alt="Sponsor" height="22" width="102"></a>
+<a href="https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps"><img src="https://img.shields.io/badge/PWA-enabled-brightgreen" alt="PWA Shield"></a>
+<a href="https://www.npmjs.com/package/bimgc" rel="nofollow" target="_blank"><img src="https://img.shields.io/npm/v/bimgc" alt="npm" height="22" width="97"></a>
+<a href="https://twitter.com/shinokada" rel="nofollow" target="_blank"><img src="https://img.shields.io/badge/created%20by-@shinokada-4BBAAB.svg" alt="Created by Shin Okada" height="22" width="161"></a>
+<a href="https://opensource.org/licenses/MIT" rel="nofollow" target="_blank"><img src="https://img.shields.io/github/license/shinokada/bimgc" alt="License" height="22" width="86"></a>
+<a href="https://www.npmjs.com/package/bimgc" rel="nofollow" target="_blank"><img src="https://img.shields.io/npm/dw/bimgc.svg" alt="npm" height="22" width="152"></a>
+</p>
+
+
+<picture>
+  <source
+    type="image/avif"
+    srcset="public/images/bimgc-100.avif?width=100 100w, public/images/bimgc-200.avif?width=200 200w, public/images/bimgc-400.avif?width=400 400w, public/images/bimgc-800.avif?width=800 800w" />
+  <source
+    type="image/webp"
+    srcset="public/images/bimgc-100.webp?width=100 100w, public/images/bimgc-200.webp?width=200 200w, public/images/bimgc-400.webp?width=400 400w, public/images/bimgc-800.webp?width=800 800w" />
+  <img
+    src="public/images/bimgc.png"
+    srcset="public/images/bimgc-100.png?width=100 100w, public/images/bimgc-200.png?width=200 200w, public/images/bimgc-400.png?width=400 400w, public/images/bimgc-800.png?width=800 800w"
+    sizes="(max-width: 800px) 100vw, 50vw"
+    style="width: 100%; aspect-ratio: 1.619047619047619"
+    loading="lazy"
+    decoding="async"
+    alt="My awesome image"
+  />
+</picture>
+
 
 A CLI tool for converting PNG and JPG images to AVIF and WebP format with various sizes and saves them in a specified output directory. The output images are named based on the input file and include information about their size and format.
 
