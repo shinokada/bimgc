@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.15](https://github.com/shinokada/bimgc/compare/v0.1.14...v0.1.15) (2023-02-06)
+
+
+### Bug Fixes
+
+* change the top image position ([8d23b5e](https://github.com/shinokada/bimgc/commit/8d23b5e3a800a476c3f267af9d80128231dc6fb7))
+* image position ([8f7a9a3](https://github.com/shinokada/bimgc/commit/8f7a9a31252fa0cbfeb6e04bd9833ede8b245acb))
+* new images ([de89e30](https://github.com/shinokada/bimgc/commit/de89e303f36d078565080842a24a0b075394763a))
+* new images after resize ([301c5bf](https://github.com/shinokada/bimgc/commit/301c5bf9486c8a53c2158b9d3b8e373d4c315a21))
+* put back the top image ([04c8e07](https://github.com/shinokada/bimgc/commit/04c8e07fe49ea9ca7223ff6d2a1b912214b562c2))
+* remove avif and webp ([a6a0155](https://github.com/shinokada/bimgc/commit/a6a0155543d3d51ea0661f05f5773add4228fabb))
+* remove the top image ([e590a39](https://github.com/shinokada/bimgc/commit/e590a39b11588a3630b192b3fd3695c87d0c30c4))
+* sizes max-width to 1200px ([9a7202c](https://github.com/shinokada/bimgc/commit/9a7202c3f810c060e9221ca423ee3260c1a2cf4c))
+
 ### [0.1.14](https://github.com/shinokada/bimgc/compare/v0.1.13...v0.1.14) (2023-02-06)
 
 
