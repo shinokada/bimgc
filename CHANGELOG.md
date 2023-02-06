@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.9](https://github.com/shinokada/bimgc/compare/v0.1.8...v0.1.9) (2023-02-06)
+
+
+### Bug Fixes
+
+* pwa update ([b376f5f](https://github.com/shinokada/bimgc/commit/b376f5fd1c9ee1ff1e2db17918585e416c996e89))
+
 ### [0.1.8](https://github.com/shinokada/bimgc/compare/v0.1.7...v0.1.8) (2023-02-05)
 
 ### [0.1.7](https://github.com/shinokada/bimgc/compare/v0.1.6...v0.1.7) (2023-02-05)
