@@ -24,7 +24,7 @@
   <img
     src="public/images/bimgc-800-optimized.png"
     srcset="public/images/bimgc-100.png?width=100 100w, public/images/bimgc-200.png?width=200 200w, public/images/bimgc-400.png?width=400 400w, public/images/bimgc-800.png?width=800 800w"
-    sizes="(max-width: 800px) 100vw, 50vw"
+    sizes="(max-width: 1200px) 100vw, 50vw"
     style="width: 100%; aspect-ratio: 1.619047619047619"
     loading="lazy"
     decoding="async"
