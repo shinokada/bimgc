@@ -13,25 +13,7 @@
 <a href="https://www.npmjs.com/package/bimgc" rel="nofollow" target="_blank"><img src="https://img.shields.io/npm/dw/bimgc.svg" alt="npm" height="22" width="152"></a>
 </p>
 
-<p align="center">
-<picture>
-  <source
-    type="image/avif"
-    srcset="public/images/bimgc-100.avif?width=100 100w, public/images/bimgc-200.avif?width=200 200w, public/images/bimgc-400.avif?width=400 400w, public/images/bimgc-800.avif?width=800 800w" />
-  <source
-    type="image/webp"
-    srcset="public/images/bimgc-100.webp?width=100 100w, public/images/bimgc-200.webp?width=200 200w, public/images/bimgc-400.webp?width=400 400w, public/images/bimgc-800.webp?width=800 800w" />
-  <img
-    src="public/images/bimgc-800-optimized.png"
-    srcset="public/images/bimgc-100.png?width=100 100w, public/images/bimgc-200.png?width=200 200w, public/images/bimgc-400.png?width=400 400w, public/images/bimgc-800.png?width=800 800w"
-    sizes="(max-width: 800px) 100vw, 50vw"
-    style="width: 100%; aspect-ratio: 1.619047619047619"
-    loading="lazy"
-    decoding="async"
-    alt="bimgc main image"
-  />
-</picture>
-</p>
+
 
 A CLI tool for converting PNG and JPG images to AVIF and WebP format with various sizes and saves them in a specified output directory. The output images are named based on the input file and include information about their size and format.
 
