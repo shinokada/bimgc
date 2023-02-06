@@ -1,6 +1,6 @@
 {
   "name": "bimgc",
-  "version": "0.1.13",
+  "version": "0.1.14",
   "description": "A node.js script that converts PNG and JPG images to AVIF and WebP format with various sizes and saves them in a specified output directory. The output images are named based on the input file and include information about their size and format.",
   "main": "bin/index.js",
   "bin": {

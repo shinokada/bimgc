@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.14](https://github.com/shinokada/bimgc/compare/v0.1.13...v0.1.14) (2023-02-06)
+
+
+### Bug Fixes
+
+* optimized png ([7929d24](https://github.com/shinokada/bimgc/commit/7929d243f23d0b0ad196ba51946607783bbf7a90))
+
 ### [0.1.13](https://github.com/shinokada/bimgc/compare/v0.1.12...v0.1.13) (2023-02-06)
 
 ### [0.1.12](https://github.com/shinokada/bimgc/compare/v0.1.11...v0.1.12) (2023-02-06)
