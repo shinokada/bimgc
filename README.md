@@ -22,7 +22,7 @@
     type="image/webp"
     srcset="public/images/bimgc-100.webp?width=100 100w, public/images/bimgc-200.webp?width=200 200w, public/images/bimgc-400.webp?width=400 400w, public/images/bimgc-800.webp?width=800 800w" />
   <img
-    src="public/images/bimgc.png"
+    src="public/images/bimgc-800-optimized.png"
     srcset="public/images/bimgc-100.png?width=100 100w, public/images/bimgc-200.png?width=200 200w, public/images/bimgc-400.png?width=400 400w, public/images/bimgc-800.png?width=800 800w"
     sizes="(max-width: 800px) 100vw, 50vw"
     style="width: 100%; aspect-ratio: 1.619047619047619"
