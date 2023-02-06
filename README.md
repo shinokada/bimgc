@@ -13,7 +13,6 @@
 <a href="https://www.npmjs.com/package/bimgc" rel="nofollow" target="_blank"><img src="https://img.shields.io/npm/dw/bimgc.svg" alt="npm" height="22" width="152"></a>
 </p>
 
-
 <picture>
   <source
     type="image/avif"
@@ -31,6 +30,7 @@
     alt="My awesome image"
   />
 </picture>
+
 
 
 A CLI tool for converting PNG and JPG images to AVIF and WebP format with various sizes and saves them in a specified output directory. The output images are named based on the input file and include information about their size and format.

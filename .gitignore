@@ -11,8 +11,3 @@ vite.config.ts.timestamp-*
 
 .vercel
 .vscode/
-
-*.webp
-*.png
-*.avif
-*.jpg
