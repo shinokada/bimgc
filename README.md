@@ -64,7 +64,7 @@ bimgc public/images/bimgc.png -s 100 200 -o public/images
 The default formats are avif and webp. To specify a different set of output format, use `-f` or `--format` option.
 
 ```bash
-public/images/bimgc.png -o public/images -f avif
+bimgc public/images/bimgc.png -o public/images -f avif
 ```
 
 ## Output directory
@@ -72,7 +72,7 @@ public/images/bimgc.png -o public/images -f avif
 The default output directory is your working directory. To specify a different output directory, use `-o` or `--outputdir` option.
 
 ```bash
-public/images/bimgc.png -s 100 200 -o public/images
+bimgc public/images/bimgc.png -s 100 200 -o public/images
 ```
 
 ## Use this with imgtaggen
