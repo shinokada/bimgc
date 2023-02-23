@@ -12,9 +12,9 @@ let outputDir = 'public/images';
 // Check for configuration file and set input/output directories
 const configFile = path.join(process.cwd(), '.bimgcrc');
 if (fs.existsSync(configFile)) {
-  const config = require(configFile);
+  const config = JSON.parse(fs.readFileSync(configFile));
   if (config.inputDir) inputDir = config.inputDir;
-  if (config.outputDir) outputDir = config.outputDir;
+  outputDir = config.outputDir || outputDir;
 }
 
 const args = yargs
@@ -60,7 +60,6 @@ const inputFileBase = path.basename(inputFile);
 const sizes = args.sizes;
 const formats = args.format;
 const help = args.help;
-const outputDir = args.outputdir || '.';
 
 if (!inputFile) {
   console.error('🚫 Please provide an input file');
