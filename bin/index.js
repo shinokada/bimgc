@@ -10,7 +10,7 @@ let inputDir = 'public/images';
 let outputDir = 'public/images';
 
 // Check for configuration file and set input/output directories
-const configFile = path.join(process.cwd(), '.bimgcrc');
+const configFile = path.resolve(process.cwd(), '.bimgc.config.js');
 if (fs.existsSync(configFile)) {
   const config = JSON.parse(fs.readFileSync(configFile));
   if (config.inputDir) inputDir = config.inputDir;
@@ -61,7 +61,7 @@ const sizes = args.sizes;
 const formats = args.format;
 const help = args.help;
 
-if (!inputFile) {
+if (!inputFile && !inputFile.length) {
   console.error('🚫 Please provide an input file');
   process.exit(1);
 }
