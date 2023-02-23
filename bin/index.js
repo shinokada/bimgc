@@ -6,6 +6,17 @@ const fs = require('fs');
 const path = require('path');
 const {version} = require('../package.json');
 
+let inputDir = 'public/images';
+let outputDir = 'public/images';
+
+// Check for configuration file and set input/output directories
+const configFile = path.join(process.cwd(), '.bimgcrc');
+if (fs.existsSync(configFile)) {
+  const config = require(configFile);
+  if (config.inputDir) inputDir = config.inputDir;
+  if (config.outputDir) outputDir = config.outputDir;
+}
+
 const args = yargs
   .options({
     sizes: {
@@ -22,7 +33,7 @@ const args = yargs
       description: 'Formats to generate',
       alias: 'f',
     },
-    outputdir: {
+    'output-dir': {
       type: 'string',
       demandOption: false,
       description: 'Output directory',
@@ -39,6 +50,10 @@ const args = yargs
   .version(version)
   .argv;
 
+// Use the same naming convention when setting the output directory
+if (args['output-dir']) {
+  outputDir = args['output-dir'];
+}
 
 const inputFile = args._[0];
 const inputFileBase = path.basename(inputFile);
