@@ -6,11 +6,11 @@ const fs = require('fs');
 const path = require('path');
 const { version } = require('../package.json');
 
-let inputDir;
-let outputDir;
+let inputDir = process.cwd();
+let outputDir = process.cwd();
 let imageFiles;
-let sizes = [];
-let formats = [];
+let sizes = [100, 200, 400, 800];
+let formats = ['avif', 'webp'];
 
 const args = yargs
   .options({
@@ -62,7 +62,7 @@ if (fs.existsSync(configFile)) {
   if (config.imageFiles) {
     imageFiles = config.imageFiles;
     if (!imageFiles || imageFiles.length === 0) {
-      console.error('🚫 No image files specified');
+      console.error('🚫 No image files specified. Set it in the config file.');
       process.exit(1);
     }
   }
@@ -72,9 +72,6 @@ if (fs.existsSync(configFile)) {
   if (config.formats) {
     formats = config.formats;
   }
-} else {
-  inputDir = process.cwd();
-  outputDir = process.cwd();
 }
 
 // if outputDir is given in the args, overwrite outputDir
