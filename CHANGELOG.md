@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.3](https://github.com/shinokada/bimgc/compare/v0.2.2...v0.2.3) (2023-02-24)
+
+
+### Bug Fixes
+
+* use if to set formats and sizes values ([8913a50](https://github.com/shinokada/bimgc/commit/8913a506cef9fde0f6fe9c968901a086b89b3234))
+
 ### [0.2.2](https://github.com/shinokada/bimgc/compare/v0.2.1...v0.2.2) (2023-02-24)
 
 
