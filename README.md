@@ -40,7 +40,7 @@ cd path/to/your/project
 
 ## Usage
 
-`bimgc` can be used as a command-line utility or it can be configured with a `.bimgc.config.js` file.
+`bimgc` can be used as a command-line utility or it can be configured with a `bimgc.config.js` file.
 
 
 ## Configuration file
