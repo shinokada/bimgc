@@ -85,7 +85,7 @@ You can use the bimgc package from the command line to specify the input directo
 To run the script with command line arguments, use the following syntax:
 
 ```sh
-$ bimgc [input_files] [options]
+$ bimgc <input_files> [options]
 ```
 
 Options

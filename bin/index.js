@@ -13,6 +13,11 @@ let sizes = [100, 200, 400, 800];
 let formats = ['avif', 'webp'];
 
 const args = yargs
+  .usage('Usage: bimgc <image-file> [options]')
+  .example(`$ bimgc input.jpg -s 100 200 300 -f avif -o output \n
+  Generate AVIF images with sizes 100px, 200px, and 300px from input.jpg and save them to output\n`)
+  .example(`$ bimgc input1.jpg input2.jpg input3.jpg -o output\n
+  Generate WEBP images from input1.jpg input2.jpg with sizes 100px, 200px, 400px and 800px for WEBP and AVIF formats and save them to output\n`)
   .options({
     sizes: {
       type: 'array',
@@ -41,8 +46,9 @@ const args = yargs
       description: 'Show help',
     },
   })
-  .help()
+  .help('h')
   .version(version)
+  .epilogue('For more information, check out the documentation at https://bimgc.codewithshin.com/')
   .argv;
 
 // set sizes and formats if command line arguments are set
