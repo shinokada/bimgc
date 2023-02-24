@@ -2,7 +2,6 @@ const path = require('path');
 const execSync = require('child_process').execSync;
 const fs = require('fs-extra');
 const { promisify } = require('util');
-const { version } = require('../package.json');
 const bimgcConfig = require('./test.bimgc.config');
 
 // const rimrafAsync = promisify(rimraf);
@@ -57,7 +56,7 @@ describe('bimgc', () => {
     const output = execSync(`node ${bimgcPath} --help`).toString();
 
     // Check that the help output includes the expected strings
-    expect(output).toContain('Options:');
+    expect(output).toContain('Usage: bimgc');
     // expect(output).toContain('Examples:');
   });
 });

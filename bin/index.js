@@ -43,10 +43,10 @@ const args = yargs
       type: 'boolean',
       demandOption: false,
       default: false,
-      description: 'Show help',
+      description: 'Show help'
     },
   })
-  .help('h')
+  .help()
   .version(version)
   .epilogue('For more information, check out the documentation at https://bimgc.codewithshin.com/')
   .argv;
@@ -60,7 +60,7 @@ if (args.format) {
 }
 
 // Check for configuration file and set input/output directories
-const configFile = path.resolve(process.cwd(), 'bimgc.config.js');
+const configFile = path.resolve(process.env.INIT_CWD, 'bimgc.config.js');
 if (fs.existsSync(configFile)) {
   const config = require(configFile);
   if (config.inputDir) {
