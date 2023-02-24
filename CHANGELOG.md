@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.1](https://github.com/shinokada/bimgc/compare/v0.1.19...v0.2.1) (2023-02-24)
+
+
+### Features
+
+* add test, config file and update script ([f2efcde](https://github.com/shinokada/bimgc/commit/f2efcde62328b5f319682df375a3463d27aaf333))
+
 ### [0.1.19](https://github.com/shinokada/bimgc/compare/v0.1.18...v0.1.19) (2023-02-23)
 
 
