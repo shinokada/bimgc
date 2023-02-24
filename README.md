@@ -45,7 +45,7 @@ cd path/to/your/project
 
 ## Configuration file
 
-You can also create a `bimgc.config.js` file in the root of your project to configure bimgc. The configuration file should export an object with the following properties:
+You can create a `bimgc.config.js` file in the root of your project to configure bimgc. The configuration file should export an object with the following properties:
 
 - `inputDir`: Input directory for image files. Default: current working directory
 - `outputDir`: Output directory for generated images. Default: current working directory
@@ -62,8 +62,8 @@ module.exports = {
   sizes: [100, 200, 400, 800],
   formats: ['avif', 'webp'],
   imageFiles: [
-    'jpg-1.jpg',
-    'debian.png'
+    'example-1.jpg',
+    'example-2.png'
   ]
 };
 ```
