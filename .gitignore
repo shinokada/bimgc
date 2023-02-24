@@ -17,7 +17,5 @@ vite.config.ts.timestamp-*
 *.png
 /output/
 /output/**/*
-/public/
-/public/**/*
 /dist/
 /dist/**/*
