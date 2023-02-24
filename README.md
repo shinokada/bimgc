@@ -37,42 +37,82 @@ bimgc --version
 bimgc --help
 cd path/to/your/project
 ```
-## Usages
 
-```bash
-bimgc public/images/bimgc.png -o public/images 
+## Usage
+
+`bimgc` can be used as a command-line utility or it can be configured with a `.bimgc.config.js` file.
+
+
+## Configuration file
+
+You can also create a `bimgc.config.js` file in the root of your project to configure bimgc. The configuration file should export an object with the following properties:
+
+- `inputDir`: Input directory for image files. Default: current working directory
+- `outputDir`: Output directory for generated images. Default: current working directory
+- `sizes`: Array of sizes to generate. Default: [100, 200, 400, 800]
+- `formats`: Array of formats to generate. Default: ['avif', 'webp']
+- `imageFiles`: Array of image files to generate. This property is required when using a configuration file.
+
+Example bimgc.config.js file:
+
+```
+module.exports = {
+  inputDir: "public/images",
+  outputDir: "public/images/output",
+  sizes: [100, 200, 400, 800],
+  formats: ['avif', 'webp'],
+  imageFiles: [
+    'jpg-1.jpg',
+    'debian.png'
+  ]
+};
 ```
 
-This will convert `public/images/bimgc.png` to the `public/images` directory. The following images will be created.
+Then run the following command to generate responsive images:
 
-```txt
-bimgc-100.avif bimgc-200.avif bimgc-400.avif bimgc-800.avif 
-bimgc-100.png  bimgc-200.png  bimgc-400.png  bimgc-800.png
-bimgc-100.webp bimgc-200.webp bimgc-400.webp bimgc-800.webp
+```sh
+bimgc
 ```
 
-## Size
+The script will use the parameters specified in the configuration file and generate the resized images in the output directory.
 
-The default output sizes are 100, 200, 400, and 800. To specify a different set of output sizes, use the `-s` or `--sizes` option.
+Note that if you specify a parameter in both the configuration file and the command line arguments, the value from the command line arguments will take precedence.
 
-```bash
-bimgc public/images/bimgc.png -s 100 200 -o public/images
+## Command-line Usage
+
+You can use the bimgc package from the command line to specify the input directory, output directory, image files, sizes to generate, and formats to generate.
+
+To run the script with command line arguments, use the following syntax:
+
+```sh
+$ bimgc [input_files] [options]
 ```
 
-## Format
+Options
+- `-s, --sizes <array>`: Array of sizes to generate. Default: [100, 200, 400, 800]
+- `-f, --format <array>`:  An array of formats to generate. Default: ['avif', 'webp']
+- `-o, --outputDir <string>`: Output directory. Default: current working directory
+- --help: Show help
+- --version: Show version number
 
-The default formats are avif and webp. To specify a different set of output format, use `-f` or `--format` option.
+For example, to resize an image named input.jpg to sizes 100, 200, and 300 pixels in JPEG format and save the resized images in the directory /path/to/output, enter the following command:
 
-```bash
-bimgc public/images/bimgc.png -o public/images -f avif
+```sh
+$ bimgc input.jpg -s 100,200,300 -f jpeg -o /path/to/output
 ```
 
-## Output directory
+You can also specify multiple input files and generate resized images for each of them. For example, to resize input1.jpg, input2.jpg, and input3.jpg to sizes 100, 200, and 300 pixels in JPEG format and save the resized images in the directory /path/to/output, enter the following command:
 
-The default output directory is your working directory. To specify a different output directory, use `-o` or `--outputdir` option.
+```sh
+$ bimgc input1.jpg input2.jpg input3.jpg -s 100,200,300 -f jpeg -o /path/to/output
+```
 
-```bash
-bimgc public/images/bimgc.png -s 100 200 -o public/images
+Note that if you do not specify any options, the script will use the default configuration, which is to resize images to sizes 100, 200, 400, and 800 pixels in WebP and AVIF format, and save the resized images in the current working directory.
+
+## Test
+
+```sh
+npm run test
 ```
 
 ## Use this with imgtaggen

@@ -4,18 +4,13 @@ const sharp = require('sharp');
 const yargs = require('yargs');
 const fs = require('fs');
 const path = require('path');
-const {version} = require('../package.json');
+const { version } = require('../package.json');
 
-let inputDir = 'public/images';
-let outputDir = 'public/images';
-
-// Check for configuration file and set input/output directories
-const configFile = path.resolve(process.cwd(), '.bimgc.config.js');
-if (fs.existsSync(configFile)) {
-  const config = JSON.parse(fs.readFileSync(configFile));
-  if (config.inputDir) inputDir = config.inputDir;
-  outputDir = config.outputDir || outputDir;
-}
+let inputDir;
+let outputDir;
+let imageFiles;
+let sizes = [];
+let formats = [];
 
 const args = yargs
   .options({
@@ -33,7 +28,7 @@ const args = yargs
       description: 'Formats to generate',
       alias: 'f',
     },
-    'output-dir': {
+    'outputDir': {
       type: 'string',
       demandOption: false,
       description: 'Output directory',
@@ -50,26 +45,72 @@ const args = yargs
   .version(version)
   .argv;
 
-// Use the same naming convention when setting the output directory
-if (args['output-dir']) {
-  outputDir = args['output-dir'];
+// set sizes and formats based on command line arguments
+sizes = args.sizes;
+formats = args.formats;
+
+// Check for configuration file and set input/output directories
+const configFile = path.resolve(process.cwd(), 'bimgc.config.js');
+if (fs.existsSync(configFile)) {
+  const config = require(configFile);
+  if (config.inputDir) {
+    inputDir = config.inputDir;
+  }
+  if (config.outputDir) {
+    outputDir = config.outputDir;
+  }
+  if (config.imageFiles) {
+    imageFiles = config.imageFiles;
+    if (!imageFiles || imageFiles.length === 0) {
+      console.error('🚫 No image files specified');
+      process.exit(1);
+    }
+  }
+  if (config.sizes) {
+    sizes = config.sizes;
+  }
+  if (config.formats) {
+    formats = config.formats;
+  }
+} else {
+  inputDir = process.cwd();
+  outputDir = process.cwd();
 }
 
-const inputFile = args._[0];
-const inputFileBase = path.basename(inputFile);
-const sizes = args.sizes;
-const formats = args.format;
+// if outputDir is given in the args, overwrite outputDir
+if (args['outputDir']) {
+  outputDir = args['outputDir'];
+}
+
+// create outputDir if it doesn't exsit
+try {
+  if (!fs.existsSync(outputDir)) {
+    fs.mkdirSync(outputDir);
+    console.log('Directory created:', outputDir);
+  }
+} catch (err) {
+  console.error('Error while creating directory:', err);
+}
+
+// check if imageFiles are set 
+if (!imageFiles || imageFiles.length === 0) {
+  if (args._[0]) {
+    imageFiles = args._
+  } else {
+    console.error('🚫 No image files specified.');
+    process.exit(1);
+  }
+}
+
+if (!sizes || sizes.length === 0) {
+  sizes = args.sizes;
+}
+
+if (!formats || formats.length === 0) {
+  formats = args.formats;
+}
+
 const help = args.help;
-
-if (!inputFile && !inputFile.length) {
-  console.error('🚫 Please provide an input file');
-  process.exit(1);
-}
-
-if (!fs.existsSync(inputFile)) {
-  console.error(`🚫 File not found: ${inputFile}`);
-  process.exit(1);
-}
 
 if (help) {
   yargs.showHelp();
@@ -85,45 +126,51 @@ for (const format of formats) {
   }
 }
 
-console.log(`Converting ${inputFile} to ${formats.join(', ')} at sizes ${sizes.join(', ')}...`);
+console.log(`Converting ${imageFiles.length} file(s) to ${formats.join(', ')} at sizes ${sizes.join(', ')}...`);
 
-(async function() {
-  try {
-    const image = sharp(inputFile);
-    const imageMetadata = await image.metadata();
-
-    for (const size of sizes) {
-      const outputFile = path.join(outputDir, `${inputFileBase.replace(/\.[^/.]+$/, '')}-${size}.${inputFile.split('.').pop()}`);
-      // const outputFile = `${outputDir}/${inputFile.replace(/\.[^/.]+$/, '')}-${size}.${inputFile.split('.').pop()}`;
-      console.log(`Generating ${outputFile}...`);
-    
-      await image
-        .resize({
-          width: size,
-          height: Math.round((size / imageMetadata.width) * imageMetadata.height),
-        })
-        .toFile(outputFile);
+(async function () {
+  for (const inputFile of imageFiles) {
+    if (!fs.existsSync(path.join(inputDir, inputFile))) {
+      console.error(`🚫 File not found: ${inputFile}`);
+      continue;
     }
 
-    for (const format of formats) {
+    try {
+      const image = sharp(path.join(inputDir, inputFile));
+      const imageMetadata = await image.metadata();
+
       for (const size of sizes) {
-        const outputFile = path.join(outputDir, `${inputFileBase.replace(/\.[^/.]+$/, '')}-${size}.${format}`);
-
+        const outputFile = path.join(outputDir, `${path.basename(inputFile, path.extname(inputFile))}-${size}${path.extname(inputFile)}`);
         console.log(`Generating ${outputFile}...`);
-
+      
         await image
           .resize({
             width: size,
             height: Math.round((size / imageMetadata.width) * imageMetadata.height),
           })
-          .toFormat(format)
           .toFile(outputFile);
       }
+      
+      for (const format of formats) {
+        for (const size of sizes) {
+          const outputFile = path.join(outputDir, `${path.basename(inputFile, path.extname(inputFile))}-${size}.${format}`);
+      
+          console.log(`Generating ${outputFile}...`);
+      
+          await image
+            .resize({
+              width: size,
+              height: Math.round((size / imageMetadata.width) * imageMetadata.height),
+            })
+            .toFormat(format)
+            .toFile(outputFile);
+        }
+      }
+      
+      console.log(`✅ Conversion complete for ${inputFile}`);
+    } catch (error) {
+      console.error(`🚫 Error while converting ${inputFile}:`, error);
     }
-
-    console.log('🚀🚀🔥🔥 Done!');
-  } catch (error) {
-    console.error(`🚫 Error:`, error);
-    process.exit(1);
   }
+  console.log('🚀🚀🔥🔥 Done!');
 })();

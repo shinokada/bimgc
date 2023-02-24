@@ -11,3 +11,13 @@ vite.config.ts.timestamp-*
 
 .vercel
 .vscode/
+
+# for bimgc
+*.jpg
+*.png
+/output/
+/output/**/*
+/public/
+/public/**/*
+/dist/
+/dist/**/*
