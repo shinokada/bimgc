@@ -95,16 +95,16 @@ Options
 - --help: Show help
 - --version: Show version number
 
-For example, to resize an image named input.jpg to sizes 100, 200, and 300 pixels in JPEG format and save the resized images in the directory /path/to/output, enter the following command:
+For example, to resize an image named input.jpg to sizes 100, 200, and 300 pixels in AVIF format and save the resized images in the directory /path/to/output, enter the following command:
 
 ```sh
-$ bimgc input.jpg -s 100,200,300 -f jpeg -o /path/to/output
+$ bimgc input.jpg -s 100 200 300 -f avif -o /path/to/output
 ```
 
-You can also specify multiple input files and generate resized images for each of them. For example, to resize input1.jpg, input2.jpg, and input3.jpg to sizes 100, 200, and 300 pixels in JPEG format and save the resized images in the directory /path/to/output, enter the following command:
+You can also specify multiple input files and generate resized images for each of them. For example, to resize input1.jpg, input2.jpg, and input3.jpg to sizes 100, 200, and 300 pixels in WEBP format and save the resized images in the directory /path/to/output, enter the following command:
 
 ```sh
-$ bimgc input1.jpg input2.jpg input3.jpg -s 100,200,300 -f jpeg -o /path/to/output
+$ bimgc input1.jpg input2.jpg input3.jpg -s 100 200 300 -f webp -o /path/to/output
 ```
 
 Note that if you do not specify any options, the script will use the default configuration, which is to resize images to sizes 100, 200, 400, and 800 pixels in WebP and AVIF format, and save the resized images in the current working directory.
