@@ -13,8 +13,6 @@ vite.config.ts.timestamp-*
 .vscode/
 
 # for bimgc
-*.jpg
-*.png
 /output/
 /output/**/*
 /dist/
