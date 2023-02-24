@@ -45,9 +45,13 @@ const args = yargs
   .version(version)
   .argv;
 
-// set sizes and formats based on command line arguments
-sizes = args.sizes;
-formats = args.formats;
+// set sizes and formats if command line arguments are set
+if (args.sizes) {
+  sizes = args.sizes;
+}
+if (args.format) {
+  formats = args.format;
+}
 
 // Check for configuration file and set input/output directories
 const configFile = path.resolve(process.cwd(), 'bimgc.config.js');
