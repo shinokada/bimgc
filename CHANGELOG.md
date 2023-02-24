@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.2](https://github.com/shinokada/bimgc/compare/v0.2.1...v0.2.2) (2023-02-24)
+
+
+### Bug Fixes
+
+* recover images ([46074b1](https://github.com/shinokada/bimgc/commit/46074b105cbe0a207cb6692661a75dbf7d6c60f8))
+* set default values for variables ([1503dd6](https://github.com/shinokada/bimgc/commit/1503dd646fdd302e0e1d05c7df968fa891cbe444))
+
 ### [0.2.1](https://github.com/shinokada/bimgc/compare/v0.1.19...v0.2.1) (2023-02-24)
 
 
