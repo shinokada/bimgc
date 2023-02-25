@@ -11,6 +11,7 @@ let outputDir = process.cwd();
 let imageFiles;
 let sizes = [100, 200, 400, 800];
 let formats = ['avif', 'webp'];
+let configFile;
 
 const args = yargs
   .usage('Usage: bimgc <image-file> [options]')
@@ -39,6 +40,12 @@ const args = yargs
       description: 'Output directory',
       alias: 'o',
     },
+    config: {
+      type: 'string',
+      demandOption: false,
+      description: 'Path to configuration file',
+      alias: 'c',
+    },
     help: {
       type: 'boolean',
       demandOption: false,
@@ -60,7 +67,12 @@ if (args.format) {
 }
 
 // Check for configuration file and set input/output directories
-const configFile = path.resolve(process.env.INIT_CWD, 'bimgc.config.js');
+if (args.config) {
+  configFile = path.resolve(process.cwd(), args.config);
+} else {
+  configFile = path.resolve(process.cwd(), 'bimgc.config.js');
+}
+
 if (fs.existsSync(configFile)) {
   const config = require(configFile);
   if (config.inputDir) {
