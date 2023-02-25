@@ -78,6 +78,26 @@ The script will use the parameters specified in the configuration file and gener
 
 Note that if you specify a parameter in both the configuration file and the command line arguments, the value from the command line arguments will take precedence.
 
+## Package Usage
+
+`bimgc` can be used in your JavaScript project by creating a configuration file in CommonJS module format (with a `.cjs` file extension).
+
+To use the package, add the following to the `scripts` section of your `package.json` file:
+
+```json
+"scripts": {
+		"gen:images": "bimgc -c bimgc.config.cjs"
+	},
+```
+
+To generate the images, run the following command:
+
+```sh
+npm run gen:images
+```
+
+This will generate images in the specified sizes and formats and save them to the outputDir.
+
 ## Command-line Usage
 
 You can use the bimgc package from the command line to specify the input directory, output directory, image files, sizes to generate, and formats to generate.
